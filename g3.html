@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Security Analyst</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+  body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2f2f2f;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+section {
+  background-color: #444;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}
+/* Scroll to top button */
+
+.scroll-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.scroll-top-button:hover {
+  background-color: #23527c;
+}
+
+/* Animations */
+
+.animation {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#job-opportunities">Job Opportunities</a></li>
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#salary">Salary</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="education">
+      <h1>Education Pathway</h1>
+      <p>To become a cybersecurity analyst, follow these steps:</p>
+      <ul>
+        <li>Bachelor's degree in Computer Science, Information Technology, or related field</li>
+        <li>Master's degree in Cybersecurity or related field (optional)</li>
+        <li>Certifications: CompTIA Security+, CISSP, CEH</li>
+      </ul>
+    </section>
+    
+    <section id="job-opportunities">
+      <h1>Job Opportunities</h1>
+      <h2>India:</h2>
+      <ul>
+        <li>Indian Cyber Security Solutions</li>
+        <li>IBM India</li>
+        <li>Deloitte India</li>
+      </ul>
+      <h2>Abroad:</h2>
+      <ul>
+        <li>Cyberark</li>
+        <li>Palo Alto Networks</li>
+        <li>Cisco Systems</li>
+      </ul>
+    </section>
+    
+    <section id="scope">
+      <h1>Scope</h1>
+      <p>Cybersecurity analysts have a wide range of responsibilities, including:</p>
+      <ul>
+        <li>Monitoring network traffic</li>
+        <li>Identifying vulnerabilities</li>
+        <li>Implementing security measures</li>
+      </ul>
+    </section>
+    
+    <section id="salary">
+      <h1>Salary</h1>
+      <p>Average salary ranges:</p>
+      <ul>
+        <li>India: ₹8-15 lakhs per annum</li>
+        <li>US: $100,000-$200,000 per annum</li>
+      </ul>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Cyber Security Analyst</p>
+  </footer>
+   <script>
+   // Add event listener to navigation links
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.href.split('#')[1];
+    const targetSection = document.getElementById(targetId);
+
+    // Scroll to target section
+    targetSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    });
+  });
+});
+
+// Add animation to sections
+const sections = document.querySelectorAll('section');
+
+sections.forEach((section) => {
+  section.addEventListener('mouseover', () => {
+    section.classList.add('animation');
+  });
+  section.addEventListener('mouseout', () => {
+    section.classList.remove('animation');
+  });
+});
+
+// Scroll to top button
+const scrollTopButton = document.createElement('button');
+scrollTopButton.textContent = 'Scroll to Top';
+scrollTopButton.className = 'scroll-top-button';
+document.body.appendChild(scrollTopButton);
+
+scrollTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Show scroll to top button on scroll
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollTopButton.style.display = 'block';
+  } else {
+    scrollTopButton.style.display = 'none';
+  }
+});
+
+   </script>
+</body>
+</html>
